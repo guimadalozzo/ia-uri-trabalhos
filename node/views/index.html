@@ -1,0 +1,51 @@
+{% extends './layouts/base.html' %}
+{% block content %}
+
+<div class="content-btn">
+    <button onclick="getTexts()" class="start-recording">Record 
+      <img class="icon-record" src="https://img.icons8.com/metro/512/microphone.png" alt=""> 
+    </button>
+</div>
+
+<div class="card-content" id="card-content">
+
+</div>
+
+<div class="modal-info">
+  <div class="cookies-container">
+    <div class="cc-message-container">
+      <span>Por padrão temos algumas regras:</span>
+      <span>1. A palavra chave é "Assunto".</span>
+      <span>2. Para adicionar um novo assunto, clique em Record e diga "Assunto" + o assunto desejado e aguarde.</span>
+      <span>3. Para mudar de assunto, diga "Assunto" + assunto cadastrado e não precisa esperar, pode falar o que desejar logo em seguida.</span>
+    </div>
+    <div>
+      <a role="button" tabindex="0" class="cc-btn cc-accept" onclick="closeModalInfo()">Entendi</a>
+    </div>
+  </div> 
+</div>
+
+<div class="modal-info-loader">
+  <div class="container-loader">
+    <div class="loader">
+      <img src="https://cdn.pixabay.com/animation/2022/10/11/03/16/03-16-39-160_512.gif" alt="">
+    </div>
+    <div class="cc-message-container">
+      <span>Fale...</span>
+    </div>
+  </div> 
+</div>
+
+{% endblock %}
+
+{% block title %}
+  Pagina inicial
+{% endblock %}
+
+{% block script %}
+  <script src="/js/index.js" charset="utf-8"></script>
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/styles/index.css">
+{% endblock %}

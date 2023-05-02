@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title%} {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> {% block styles %} {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="initial">
+            <h4 class="title">Speech Writer</h4>
+        </div>
+
+        <div class="block-content">
+            {% block content %}
+            
+            {% endblock %}
+        </div>
+  
+        <footer class="page-footer font-small stylish-color-dark pt-4" style="background-image: url()">
+            <div class="text-center text-muted">
+                <p class="small">speech-writter <i class="fas fa-copyright"></i> Renan Marcos Andreolla - Fernando Lise Garcia</p>
+            </div>
+        </footer>
+    </div>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="/js/base.js" charset="utf-8"></script> -->
+    {% block script %} {% endblock %}
+</body>
+
+</html>

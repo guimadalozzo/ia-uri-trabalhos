@@ -1,0 +1,24 @@
+body {
+    font-family: 'Roboto'!important;
+}
+
+.block-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.initial {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    
+}
