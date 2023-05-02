@@ -1,0 +1,35 @@
+{
+  "name": "audio-notes-api",
+  "version": "1.0.0",
+  "description": "REST API for mobile app to transcribe audio into AI sorted reminders",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorFollador/uri-audioNotes-api.git"
+  },
+  "author": "Igor D. Follador",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorFollador/uri-audioNotes-api/issues"
+  },
+  "homepage": "https://github.com/IgorFollador/uri-audioNotes-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.2.0",
+    "natural": "^6.2.0",
+    "sequelize": "^6.31.0"
+  }
+}
