@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/compromissos.css">
+    <title>Compromissos do mês</title>
+  </head>
+  <body>
+    <h1>Compromissos do mês</h1>
+    <table class="rwd-table">
+      <thead>
+        <tr>
+          <th>Nome do evento</th>
+          <th>Local do evento</th>
+          <th>Descrição</th>
+          <th>Data do evento</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for evento in eventos %}
+          <tr>
+            <td>{{ evento['summary'] }}</td>
+            <td>{{ evento['location'] }}</td>
+            <td>{{ evento['description'] }}</td>
+            <td>{{ evento['start'] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

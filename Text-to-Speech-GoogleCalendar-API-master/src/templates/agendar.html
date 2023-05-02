@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+	<link href="../static/css/agendar.css" rel="stylesheet">
+  </head>
+  <body>
+    <form class="form" action="/agendando" method="POST">
+      <div class="title">Bem-Vindo a</div>
+      <div class="subtitle">sua Agenda Online!!</div>
+      <div class="input-container ic1">
+        <input id="firstname" class="input" type="text" name="nome" placeholder=" " />
+        <div class="cut"></div>
+        <label for="nome" class="placeholder">Nome do Evento</label>
+      </div>
+      <div class="input-container ic2">
+        <input id="lastname" class="input" type="text" name="local" placeholder=" " />
+        <div class="cut"></div>
+        <label for="local" class="placeholder">Local do Evento</label>
+      </div>
+      <div class="input-container ic2">
+        <input id="email" class="input" type="text" name="desc" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="desc" class="placeholder">Descrição do evento</label>
+      </div>
+      <div class="input-container ic2">
+        <input id="email" class="input" type="text" name="date1" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="date1" class="placeholder">Data e Hora de Início</label>
+      </div>
+      <div class="input-container ic2">
+        <input class="input" type="text" name="date2" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="date2" class="placeholder">Data e Hora do Término do Evento</label>
+      </div>
+      <input class="submit" type="submit" value="Agendar"/>
+	  <div class="anchor-block">
+		  <a class="back" href="/">VOLTAR</a>
+	  </div>
+    </form>
+  </body>
+</html>
