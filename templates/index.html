@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trabalho IA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <div class="content-wrapper">
+
+        <div class="mic-wrapper">
+            <div class="gn red-bg">
+                <div class="mc"></div>
+            </div>
+            <div class="text-wrapper">
+                <p id="response-text">Consulte o tempo pelo comando "tempo em *cidade desejada*"</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.lang = "pt-BR";
+
+        $(".gn").click(function () {
+            recognition.start();
+            $(".gn").removeClass("red-bg").addClass("green-bg");
+        });
+
+        recognition.onresult = function (event) {
+            var text = event.results[0][0].transcript;
+            text = text.toLowerCase(); 
+            text = text.replace(/[áàãâä]/g, "a"); 
+            text = text.replace(/[éèêë]/g, "e"); 
+            text = text.replace(/[íìîï]/g, "i"); 
+            text = text.replace(/[óòõôö]/g, "o"); 
+            text = text.replace(/[úùûü]/g, "u"); 
+            console.log("Você disse: " + text);
+
+            if (text.includes("tempo em")) {
+                var city = text.split("tempo em")[1].trim();
+                console.log("Cidade: " + city);
+            }
+
+            $.ajax({
+                url: "/process_audio",
+                method: "POST",
+                data: { "text": text },
+                success: function (response) {
+                    $("#response-text").text(response);
+                    $(".gn").removeClass("green-bg").addClass("red-bg");
+                }
+            });
+
+
+            $.ajax({
+                url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=66edcb4dbe36c6e04aaf2899a7209a9d&units=metric&lang=pt",
+                success: function (response) {
+                    var condition = response.weather[0].main;
+                    if (condition === 'Clear') {
+                        $("body").css({
+                            "background-image": "url('https://cdn.pixabay.com/photo/2018/08/06/22/55/sun-3588618__480.jpg')",
+                            "background-repeat": "no-repeat",
+                            "background-size": "cover"
+                        });
+
+                    }
+                    else if (condition === 'Clouds') {
+                        $("body").css("background-image", "url('https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg?cs=srgb&dl=pexels-pixabay-531756.jpg&fm=jpg')");
+                    } else if (condition === 'Drizzle' || condition === 'Rain') {
+                        $("body").css("background-image", "url('https://wallpaperset.com/w/full/d/4/5/534558.jpg')");
+                    } else if (condition === 'Thunderstorm') {
+                        $("body").css("background-image", "url('https://images.immediate.co.uk/production/volatile/sites/4/2020/08/GettyImages-NA006117-b5eac24.jpg')");
+                    } else if (condition === 'Snow') {
+                        $("body").css("background-image", "url('https://media.istockphoto.com/id/1287673841/vector/snow-background-winter-blue-sky-christmas-background-falling-snow-forest-in-the-snow.jpg?s=612x612&w=0&k=20&c=9sNVrWVW8SFE8hUJLd4UdaG1OeE-Wz693Sg5tl_iYvs=')");
+                    } else if (condition === 'Atmosphere') {
+                        $("body").css("background-image", "url('https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?cs=srgb&dl=pexels-lumn-167699.jpg&fm=jpg')");
+                    } else {
+                        $("body").css("background", "#87ceeb")
+                    }
+                    console.log(response, "response")
+                },
+
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
