@@ -23,8 +23,11 @@ Outra rota é criada ('/reconhecimento_de_voz') e o processo de leitura de aúdi
 
 ### F)   Passo-a-passo para a execução do projeto:
 1- Clonar o repositório
+
 2- Criar o ambiente virtual utilizando: python3 -m venv ./venv
+
 3- Ativar o ambiente virtual: .\venv\Scripts\activate venv
+
 4- Instalar as bibliotecas necessárias: 
 - pip install flask
 - pip install request 
@@ -33,5 +36,6 @@ Outra rota é criada ('/reconhecimento_de_voz') e o processo de leitura de aúdi
 - pip install speechrecognition
 - pip install pyttsx3
 
-5- Após isso, executar o arquivo app.py da seguinte maneira: python app.py 
+5- Após isso, executar o arquivo app.py da seguinte maneira: python app.py
+
 6- Acessar a URL http://localhost:5000
