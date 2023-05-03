@@ -29,12 +29,10 @@
   > Dentro da raíz do projeto, temos uma pasta "flask-server", uma pasta "node" e um arquivo .gitignore.
 
   > .gitignore:
-
-    > Nesse arquivo temos as pastas que não precisam subir para o repositório GIT.
+  - Nesse arquivo temos as pastas que não precisam subir para o repositório GIT.
   
   > flask-server:
-
-    > A pasta "flask-server" é onde fica o arquivo "server.py", responsável por captar a voz do usuário quando sua rota é chamada e retornar informações para a aplicação WEB.
+  - A pasta "flask-server" é onde fica o arquivo "server.py", responsável por captar a voz do usuário quando sua rota é chamada e retornar informações para a aplicação WEB.
   
   > node:
     - A pasta "node" é onde fica toda a aplicação WEB, dentro dela temos o arquivo "index.js" que é o principal e primeiro arquivo a ser executado.
