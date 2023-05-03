@@ -12,18 +12,18 @@ Em suma, as capacidades do projeto são:
 - Por fim, o usuário tem a opção de ouvir o texto retornado pela OpenAI, onde é utilizado o processo de speech to text (APIs nativas da plataforma - Android / iOS). 
 
 B) Qual as tecnologias utilizadas, e porque?
-Para front end: Flutter
-Motivo: Framework muito versátil e rebusto que permite a construção de app em multiplas plataformas, i.e Android / iOS / Windows / MacOS / Linux etc. 
+- Para front end: Flutter
+- Motivo: Framework muito versátil e rebusto que permite a construção de app em multiplas plataformas, i.e Android / iOS / Windows / MacOS / Linux etc. 
 Além disso utiliza Dart para construção declarativa de interfaces, o que torna o processo de desenvolvimento muito mais dinâmico.  
 
-Para speech to text: Google 
-Motivo: Foi uma das únicas plataformas que permitiu a criação de um projeto e utilização gratuíta de recursos até certo limite (free tier).
+- Para speech to text: Google 
+- Motivo: Foi uma das únicas plataformas que permitiu a criação de um projeto e utilização gratuíta de recursos até certo limite (free tier).
 
-Para aprimoramento/correção do texto: OpenAI - Modelo davinci-002
-Motivo: Foi a proposta aceita para o projeto.
+- Para aprimoramento/correção do texto: OpenAI - Modelo davinci-002
+- Motivo: Foi a proposta aceita para o projeto.
 
-Para text to speech: APIs nativas do SO. 
-Motivo: facilitade de uso. 
+- Para text to speech: APIs nativas do SO. 
+- Motivo: facilitade de uso. 
 
 C) Qual a arquitetura do software? Quem é o back, o front, como se comunicam, etc
 
@@ -60,20 +60,19 @@ E) Explicar o código dos principais arquivos do projeto. Ex: No backend, de for
    - demo.dart
 Métodos e responsabilidades: 
  
-Método privado _checkStoragePermission_: Na inicializção do app verifica status das permissões de armazenamento e microfone, caso alguma não esteja com status de ´granted´ o app irá requisitar acesso as permissões, após sua execução irá executar o método _createEmptyFiles_.
-Método privado _createEmptyFiles_: Responsável pela criação de dois arquivos vazios na pasta de cache do dispositivo, sendo eles ´audio.mp3´ e ´audio.flac´. 
-Método privado _localPath_: Getter que retorna path do diretório de cache no SO;
-Método privado _localFile_: Getter que retorna path arquivo ´.mp3´ no diretório de cache no SO;
-Método privado _getAudioContent_: Realiza a conversão do arquivo ´.mp3´ para ´.flac´. 
-Método privado _deleteFiles_: Ao clicar em "Gravar", os arquivos existentes no diretório de cache serão deletados (.mp3 e .flac); 
-
-Botão ´Gravar/Parar´: utiliza uma simples expressão ternária para identificar estado atuado da aplicação -- gravando ou não -- para determinar o texto do botão e ação a ser executada no clique.
+- Método privado _checkStoragePermission_: Na inicializção do app verifica status das permissões de armazenamento e microfone, caso alguma não esteja com status de ´granted´ o app irá requisitar acesso as permissões, após sua execução irá executar o método _createEmptyFiles_.
+- Método privado _createEmptyFiles_: Responsável pela criação de dois arquivos vazios na pasta de cache do dispositivo, sendo eles ´audio.mp3´ e ´audio.flac´. 
+- Método privado _localPath_: Getter que retorna path do diretório de cache no SO;
+- Método privado _localFile_: Getter que retorna path arquivo ´.mp3´ no diretório de cache no SO;
+- Método privado _getAudioContent_: Realiza a conversão do arquivo ´.mp3´ para ´.flac´. 
+- Método privado _deleteFiles_: Ao clicar em "Gravar", os arquivos existentes no diretório de cache serão deletados (.mp3 e .flac); 
+- Botão ´Gravar/Parar´: utiliza uma simples expressão ternária para identificar estado atuado da aplicação -- gravando ou não -- para determinar o texto do botão e ação a ser executada no clique.
 Caso precise gravar ou parar será utilizada uma instância previamente criada do plugin ´RecordMp3´.
 
-Botão ´Converter para texto´: irá obter o path do arquivo ´.mp3´ gerado utilizando o método privado _localFile_, converter para ´.flac´ via método privado _getAudioContent_ e se comunicar com Google GCP para obter a o texto transcrito.
+- Botão ´Converter para texto´: irá obter o path do arquivo ´.mp3´ gerado utilizando o método privado _localFile_, converter para ´.flac´ via método privado _getAudioContent_ e se comunicar com Google GCP para obter a o texto transcrito.
 Ao obter o texto irá atualizar a tela do app apresentado o resultado. Em caso de erro irá apresentar uma mensagem com um erro.
 
-Botão ´Obter versão do texto com aprimoramento´: Irá se comunicar com a API da OpenAI, utilizando o texto retornado via Google API como parâmetro. De mesmo modo, ou irá apresentar o resultado ou um erro.
+- Botão ´Obter versão do texto com aprimoramento´: Irá se comunicar com a API da OpenAI, utilizando o texto retornado via Google API como parâmetro. De mesmo modo, ou irá apresentar o resultado ou um erro.
 
 F) Por fim, explicar o passo-a-passo para a execução do projeto.
 
