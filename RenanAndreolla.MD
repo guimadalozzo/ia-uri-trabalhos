@@ -28,24 +28,29 @@
 #D) Explicar os diretórios do projeto, mostrando as responsabilidades técnicas de cada um.
   > Dentro da raíz do projeto, temos uma pasta "flask-server", uma pasta "node" e um arquivo .gitignore.
 
-  > .gitignore:
-  - Nesse arquivo temos as pastas que não precisam subir para o repositório GIT.
+  - .gitignore:
   
-  > flask-server:
-  - A pasta "flask-server" é onde fica o arquivo "server.py", responsável por captar a voz do usuário quando sua rota é chamada e retornar informações para a aplicação WEB.
+  > Nesse arquivo temos as pastas que não precisam subir para o repositório GIT.
   
-  > node:
-    - A pasta "node" é onde fica toda a aplicação WEB, dentro dela temos o arquivo "index.js" que é o principal e primeiro arquivo a ser executado.
-    - O arquivo "package.json" é o responsável pelas configurações de projeto assim como as bibliotecas NPM utilizadas.
-    - A pasta "views" é onde ficam todos os arquivos HTML responsáveis pelas telas do projeto. Obs: Dentro dela existe uma pasta "layouts" que é onde fica o arquivo padrão configurado com o Nunjucks.
-    - A pasta "public" é onde ficam os arquivos públicos, ou seja, o javascript da aplicação e os arquivos CSS responsáveis pela estilização.
-    - A pasta "images" é onde ficam as imagens utilizadas no projeto.
+  - flask-server:
+  
+  > A pasta "flask-server" é onde fica o arquivo "server.py", responsável por captar a voz do usuário quando sua rota é chamada e retornar informações para a aplicação WEB.
+  
+  - node:
+  
+    > A pasta "node" é onde fica toda a aplicação WEB, dentro dela temos o arquivo "index.js" que é o principal e primeiro arquivo a ser executado.
+    > O arquivo "package.json" é o responsável pelas configurações de projeto assim como as bibliotecas NPM utilizadas.
+    > A pasta "views" é onde ficam todos os arquivos HTML responsáveis pelas telas do projeto. Obs: Dentro dela existe uma pasta "layouts" que é onde fica o arquivo padrão configurado com o Nunjucks.
+    > A pasta "public" é onde ficam os arquivos públicos, ou seja, o javascript da aplicação e os arquivos CSS responsáveis pela estilização.
+    > A pasta "images" é onde ficam as imagens utilizadas no projeto.
 
 #E) Explicar o código dos principais arquivos do projeto. Ex:
-  > Nesse projeto, podemos evidenciar 3 arquivos principais que fazem o sistema funcionar, que são eles:
-
+  - Nesse projeto, podemos evidenciar 3 arquivos principais que fazem o sistema funcionar, que são eles:
+  
     > "./node/index.js": Esse arquivo é o principal da aplicação WEB, ele cria o servidor Node e possui a rota de comunicação com o servidor Python.  
+    
     > "./node/public/js/index.js": Esse arquivo é o que gera todas as informações em tela. Esse arquivo recebe informações do BACKEND Node e cria todos os cards com os textos em tela através de Javascript puro + Jquery. Nele também ficam as lógicas de troca de assuntos e todos os fluxos possíveis do usuário, ou seja, tudo que aparece em tela durante o funcionamento é criado com javascript puro + jQuery.
+
     > "./flask-server/server.py": Esse é o arquivo que contém o código do servidor Python, o qual possui uma rota GET "/getWords" que é chamada pelo Node. Esse código captura a voz do usuário através do microfone e retorna o que foi dito para o BACKEND Node e por sua vez para o front, onde é exibido.
 
 #F) Por fim, explicar o passo-a-passo para a execução do projeto.
