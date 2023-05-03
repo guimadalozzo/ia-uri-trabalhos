@@ -30,12 +30,12 @@ C) Qual a arquitetura do software? Quem é o back, o front, como se comunicam, e
 Tendo em vista a simplicidade do software, não foi implementado um padrão arquitetural complexo, haja vista que não se objetiva utilização comercial ou de modo outro senão uma prova de conceito.
 Em suma, o projeto consiste de 6 arquivos e dois diretórios:
 
-constants/
-   routes.dart // arquivo estático com os nomes das rotas disponíveis na aplicação (1 rota apenas)
-pages/ 
-   demo.dart // página onde ocorrem as interações do usuário; comunicação com Google Cloud; Comunicação com OpenAI; 
-main.dart // inicialização do projeto; definição das rotas nomeadas; definição da chave the API da OpenAI.   
-route_generator.dart // definição das rotas nomeadas 
+- constants/
+    - routes.dart // arquivo estático com os nomes das rotas disponíveis na aplicação (1 rota apenas)
+- pages/ 
+    - demo.dart // página onde ocorrem as interações do usuário; comunicação com Google Cloud; Comunicação com OpenAI; 
+- main.dart // inicialização do projeto; definição das rotas nomeadas; definição da chave the API da OpenAI.   
+- route_generator.dart // definição das rotas nomeadas 
 
 Vale ressaltar que, as chaves de API da OpenAI e Google GCP são armazenas / inseridas na aplicação via ´--dart-define´, ou seja, ficam disponíveis apenas em tempo de execução e devem ser definidas da inicialização do app, ex: ´flutter run --release --dart-define=KEY=VALUE´.
 
@@ -43,24 +43,21 @@ D) Explicar os diretórios do projeto, mostrando as responsabilidades técnicas 
 
 Conforme supracitado, tendo por base que esta seria apenas uma prova de conceito, não foram implementados padrões arquiteturais que viabilizem a publicação ou utilização desse app fora de um ambiente/escopo controlado. 
 
-constants/
-   routes.dart // arquivo estático com os nomes das rotas disponíveis na aplicação (1 rota apenas)
-pages/ 
-   demo.dart // página onde ocorrem as interações do usuário
-main.dart // inicialização do projeto; definição das rotas nomeadas; definição da chave the API da OpenAI.   
-route_generator.dart // definição das rotas nomeadas
+- constants/
+   - routes.dart // arquivo estático com os nomes das rotas disponíveis na aplicação (1 rota apenas)
+- pages/ 
+   - demo.dart // página onde ocorrem as interações do usuário
+- main.dart // inicialização do projeto; definição das rotas nomeadas; definição da chave the API da OpenAI.   
+- route_generator.dart // definição das rotas nomeadas
 
 E) Explicar o código dos principais arquivos do projeto. Ex: No backend, de for python/dart/js, explicar os métodos e funcionalidades. No frontend, de for flutter/html/react, explicar os principais componentes.
 
-main.dart // aqui é inicializada a aplicação 'void main()' e definida a chave the api da OpenAI. 
-
-route_generator.dart // arquivo simples para definição das rotas do app, nesse caso apenas uma. 
-
-constants/ 
-  routes.dart // arquivo estático contendo apenas o nome da rota criada em route_generador.dart 
-
-pages/
-  demo.dart
+- main.dart // aqui é inicializada a aplicação 'void main()' e definida a chave the api da OpenAI. 
+- route_generator.dart // arquivo simples para definição das rotas do app, nesse caso apenas uma. 
+- constants/ 
+   - routes.dart // arquivo estático contendo apenas o nome da rota criada em route_generador.dart 
+- pages/
+   - demo.dart
 Métodos e responsabilidades: 
  
 Método privado _checkStoragePermission_: Na inicializção do app verifica status das permissões de armazenamento e microfone, caso alguma não esteja com status de ´granted´ o app irá requisitar acesso as permissões, após sua execução irá executar o método _createEmptyFiles_.
