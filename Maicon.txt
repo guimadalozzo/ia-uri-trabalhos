@@ -1,0 +1,54 @@
+A) Qual é a ideia geral do projeto?
+A ideia principal do projeto é fazer uma consulta na API do mercado livre, basicamente como ele funciona: o usuário precisa falar um tipo de produto e a IA irá entender a palavra e consultar o produto dentro da API, trazendo os 5 produtos, com a descrição e o preço, quando renderiza a última tela  a voz do google fala o título dos produtos achados
+
+B) Qual as tecnologias utilizadas, e porque?
+Flask(python), HTML e css
+Foi utilizado o Flask pois era algo mais maleável e fácil de usar, inicialmente até tentamos usar o django mas não deu certo pelo fluxo ser mais complexo
+e na parte do Front HTML e CSS são para o front as linguagens mais fáceis e são super eficientes, cumprindo com o que queríamos 
+
+C) Qual a arquitetura do software? Quem é o back, o front, como se comunicam, etc
+Inicialmente ele identifica o reconhecimento de voz pelo microfone do notebook, depois que ele reconhecer a palvra ele consulta na API definida (Mercado livre) e retorna um json com os 5 itens (pré definidos no código (app.py)), o framework Flask serve para unir tudo (desenvolvido com python). Então o fluxo basicamente é reconhece uma palavra, consulta na API os itens semelhantes, trás o json e renderiza na tela para o usuário  
+
+D) Explicar os diretórios do projeto, mostrando as responsabilidades técnicas de cada um.
+A pasta mais importante do trabalho é a de templates, onde contém 2 arquivos ( index.html) que é basicamente uma tela que contém um botão e uma descrição do que faz a IA, e o resultado_busca.html que é basicamente a renderização do json que veio da API, esse json é inserido em uma tabela feita em html e estilizada com css.
+Outro arquivo super importante é o app.py que é basicamente onde contém toda a lógica da IA, esse é o arquivo principal
+
+
+E) Explicar o código dos principais arquivos do projeto. Ex: No backend, de for python/dart/js, explicar os métodos e funcionalidades. No frontend, de for flutter/html/react, explicar os principais componentes.
+
+Vou começar pelo arquivo principal App.py que é basicamente o que contém tudo, 
+o Flask precisa que crie uma instância para poder rodar a aplicação web, então logo depois dos imports foi a primeira coisa que fizemos, logo após tem uma função só para deixar o projetinho um pouco mais usual(caso a pessoa fale "desligar" ele cancela a busca e não retorna nada
+
+Um adendo foi um if se a palavra for diferente de desligar ele habilita o microfone e utiliza o método de reconhecimento de fala do google, a variável text, contém todos os itens da consulta
+
+Logo após ele faz um for de resultado por resultado através de um título e define o método de voz que será utilzado logo após retornar todo o json, mas para definir precisou definir idioma e a forma de que ela ia falar :
+def say_results(results):
+    result_titles = [result["title"] for result in results]
+    text = ", ".join(result_titles)
+    engine = pyttsx3.init()
+    engine.setProperty('voice', 'brazil')
+    engine.setProperty('encoding', 'utf-8')
+    engine.say("Os resultados da busca são: " + text)
+    engine.runAndWait()
+Isso serviu basicamente para depois que ele consultar e retornar os itens na pagina resultado_busca ele falar os títulos de todos os itens.
+
+Logo após é onde de fato vinculamos qual API ela iria consultar e quantos itens retornaria nesse json, como a API é aberta n precisou de nenhum tokem para esse acesso, logo após a consulta ela realiza um get trazendo os resultados, para deixar um pouco melhor foi feito um if que basicamente consulta se o status veio 200 e renderiza a Página resultado_busca que é onde vem todos os produtos
+
+O código possui mais os dois arquivos (index.html e resultado_busca) que é basicamente aonde estão a estilização e a marcação das páginas, o index é da página inicial com o botão para começar o processo e o resultado e os itens no final do processo, para front foi só html e css mesmo
+
+
+F) Por fim, explicar o passo-a-passo para a execução do projeto.
+
+Para executar o projeto precisa instalar algumas bibliotecas do Python para a excecução 
+Habilitar o venv do Flask para criar um ambiente virtual local e dai sim rodar o Python nome do arquivo (Ativar o ambiente virtual: .\venv\Scripts\activate venv)
+e logo após abrir o localhost 500
+Por termos utilizado o Flask tivemos que instalar algumas biblioteca dele tbm para fazer as request e renderizar os templates 
+
+As bibliotecas são :
+pip install flask
+pip install request
+pip install wheel
+pip install pyaudio
+pip install speechrecognition
+pip install pyttsx3
+
