@@ -1,6 +1,6 @@
 ## Jaisson Bassanesi
 
-#<h3>O que é?</h3>
+<h3>O que é?</h3>
 
 O Audio Notes foi criado para funcionar como um site para anotar ideias por áudio, para que o usuário não precise digitar e possa fazer anotações de forma rápida.
 O Audio Notes também realiza a categorização automatica das anotações de acordo com a escrita da mesma.
@@ -9,18 +9,18 @@ Por exemplo ideias para novos projetos, ideias para reformas, anotações de afa
 <br>
 
 
-#<h3>Stacks</h3>
+<h3>Stacks</h3>
 
 - <strong>Front-end:</strong>
-<br>
+
 Para o front-end foi utilizado o React como biblioteca prinpipal com JS como linguagem de programação, além de outras liguagens de estilo e marcação como CSS e HTML.
 Além disso, o core do 'Speech to Text' foi feito com a biblioteca "react-speech-recognition", que é responsável por identificar comandos de parada, para parar de ouvir o usuário e de transformar o áudio em texto.
 Optando por essa stack front-end pelo vasto conteúdo online, conhecimento prévio dos desenvolvedores, por serem simples de utilizar e atenderem os requisitos.
 
-<br>
+<br><br>
 
 - <strong>Back-end:</strong>
-<br>
+
 No back-end utilizou-se o Node.js com REST e sequelize para a construção da API que fornece o necessário para o front-end.
 Optando por essa stack back-end pelo vasto conteúdo online, conhecimento prévio dos desenvolvedores, por serem simples de utilizar e atenderem o desejado.
 
@@ -28,7 +28,7 @@ Optando por essa stack back-end pelo vasto conteúdo online, conhecimento prévi
 <br>
 
 
-#<h3>Arquitetura</h3>
+<h3>Arquitetura</h3>
 
 O front-end como já citado, foi desenvolvido em react.js, sendo assim, de simples comunicação com APIs utilizando o axios (uma lib muito utilizada para comunicação no react).
 A API é responsável por manter usuários, categorias, mensagens e conversas. Onde uma conversa possui 1 ou mais mensagens e uma única categoria.
@@ -39,7 +39,7 @@ Retornando assim todos os dados necessários para o front-end quando o mesmo req
 <br>
 
 
-#<h3>Indo mais a fundo - Front-end</h3>
+<h3>Indo mais a fundo - Front-end</h3>
 
 O projeto em React foi criado utilizando o ```create-react-app```, sendo assim, boa parte da disposição de diretórios foi criada ao iniciar o projeto:
 - ```public```: - Contem apenas imagens do projeto inicial do react e um index.html da mesma finalidade;
@@ -49,7 +49,7 @@ O projeto em React foi criado utilizando o ```create-react-app```, sendo assim, 
 	- ```pages```: Contém as três páginas do projeto, cada página fica em uma rota diferente;
 	- ```services```: Contém a configuração da api, para facilitar a chamada dos endpoints de qualquer página ou componente.
 <br>
-#<h3>Indo mais a fundo - Back-end</h3>
+<h3>Indo mais a fundo - Back-end</h3>
 
 - ```src```: - Contém os diretórios principais e demais arquivos de configuração de projeto;
 	- ```config```: Diretório responsável pela configuração do banco de dados;
@@ -64,12 +64,13 @@ O projeto em React foi criado utilizando o ```create-react-app```, sendo assim, 
 <br>
 
 
-#<h3>Arquivos principais</h3>
+<h3>Arquivos principais</h3>
 
 - <strong>Front-end:</strong>
 	- ```App.js```: Arquivo que inicia e define as rotas/URLs do projeto, chamando os demais arquivos das pages quando necessário;
 	- ```Speech``` > ```index.js```: Responsável pela lógica do Speech, transforma o áudio em texto;
 <br>
+
 - <strong>Back-end:</strong>
 	- ```AuthenticationController.js```: Responsável pela autenticação do usuário;
 	- ```ConversationController.js```: Responsável por manter as conversas;
@@ -77,7 +78,7 @@ O projeto em React foi criado utilizando o ```create-react-app```, sendo assim, 
 <br>
 
 
-#<h3>Execução</h3>
+<h3>Execução</h3>
 
 Seguimos o seguinte fluxo para a criação deste projeto:
 - Mapeamos as funcionalidades;
