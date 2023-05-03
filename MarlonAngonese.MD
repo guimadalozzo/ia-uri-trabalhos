@@ -43,7 +43,7 @@ E) Explicar o código dos principais arquivos do projeto. Ex:
 
 F) Por fim, explicar o passo-a-passo para a execução do projeto.
 
-> Para iniciar, os servidores, digita-se 'npm run dev' (Vue) e 'python ./src/python/main.py' (API python).
+> Para iniciar, os servidores, digita-se `npm run dev` (Vue) e `python ./src/python/main.py` (API python).
 
 > Após aberto os servidores do vue.js e do python, o projeto inicialmente executa no localhost com o ./src/App.vue em que carrega a tela de bem-vindo. Na detecção deste botão, o template atual é trocado por outro que é carregado dentro de ./src/components/WordSpeech.vue. A primeira coisa que o componente faz é construir um layout padrão e depois chamar via AJAX a rota de API /api/question. Nesse momento, o back-end python recebe a requisição e retorna um json com uma frase e quatro alternativas. Com o auxílio da ferramenta de front-end esses dados são facilmente apresentados na tela dentro do HTML. Além do vue, foi utilizado jquery para uma mais rápida produção de código.
 
@@ -58,4 +58,3 @@ F) Por fim, explicar o passo-a-passo para a execução do projeto.
 > Como a API devolve várias alternativas de palavras que foram pronunciadas, o front-end analisa uma por uma, sempre priorizando caso tenha encontrado uma palavra correta.
 
 > O score (pontos) e o counter (índice da frase atual) ficam no arquivo principal App.vue. Quando o counter for > 5, automaticamente o sistema coleta o score e mostra na tela o resultado para o usuário.
-
