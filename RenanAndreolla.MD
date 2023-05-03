@@ -37,12 +37,11 @@
     > A pasta "flask-server" é onde fica o arquivo "server.py", responsável por captar a voz do usuário quando sua rota é chamada e retornar informações para a aplicação WEB.
   
   > node:
-
-    > A pasta "node" é onde fica toda a aplicação WEB, dentro dela temos o arquivo "index.js" que é o principal e primeiro arquivo a ser executado.
-    > O arquivo "package.json" é o responsável pelas configurações de projeto assim como as bibliotecas NPM utilizadas.
-    > A pasta "views" é onde ficam todos os arquivos HTML responsáveis pelas telas do projeto. Obs: Dentro dela existe uma pasta "layouts" que é onde fica o arquivo padrão configurado com o Nunjucks.
-    > A pasta "public" é onde ficam os arquivos públicos, ou seja, o javascript da aplicação e os arquivos CSS responsáveis pela estilização.
-    > A pasta "images" é onde ficam as imagens utilizadas no projeto.
+    - A pasta "node" é onde fica toda a aplicação WEB, dentro dela temos o arquivo "index.js" que é o principal e primeiro arquivo a ser executado.
+    - O arquivo "package.json" é o responsável pelas configurações de projeto assim como as bibliotecas NPM utilizadas.
+    - A pasta "views" é onde ficam todos os arquivos HTML responsáveis pelas telas do projeto. Obs: Dentro dela existe uma pasta "layouts" que é onde fica o arquivo padrão configurado com o Nunjucks.
+    - A pasta "public" é onde ficam os arquivos públicos, ou seja, o javascript da aplicação e os arquivos CSS responsáveis pela estilização.
+    - A pasta "images" é onde ficam as imagens utilizadas no projeto.
 
 #E) Explicar o código dos principais arquivos do projeto. Ex:
   > Nesse projeto, podemos evidenciar 3 arquivos principais que fazem o sistema funcionar, que são eles:
